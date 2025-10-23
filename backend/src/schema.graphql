@@ -1,0 +1,58 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input BoundingBoxInput {
+  maxLat: Float!
+  maxLng: Float!
+  minLat: Float!
+  minLng: Float!
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Place implements Node {
+  address: String
+  category: String!
+  city: String
+  country: String
+  description: String
+  id: ID!
+  imageUrl: String
+  lat: Float!
+  lng: Float!
+  name: String!
+  rating: Float
+  state: String
+}
+
+type PlaceConnection {
+  edges: [PlaceEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type PlaceEdge {
+  cursor: String!
+  node: Place!
+}
+
+input PlaceSearchFilterInput {
+  bbox: BoundingBoxInput
+  category: String
+  text: String
+}
+
+type Query {
+  node(id: String!): Node
+  searchPlaces(after: String, filter: PlaceSearchFilterInput, first: Int = 10): PlaceConnection!
+}
