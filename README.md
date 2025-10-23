@@ -62,7 +62,7 @@ npx prisma db seed
 yarn start:dev
 ```
 
-Backend runs at: http://localhost:3000  
+Backend runs at: http://localhost:3000
 GraphQL Playground: http://localhost:3000/graphql
 
 ### 4. Start Frontend
