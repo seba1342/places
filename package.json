@@ -1,0 +1,19 @@
+{
+  "name": "places",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "docker-compose up -d && concurrently \"yarn dev:backend\" \"yarn dev:frontend\"",
+    "dev:backend": "cd backend && yarn start:dev",
+    "dev:frontend": "cd frontend && yarn start",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
