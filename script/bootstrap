@@ -28,4 +28,4 @@ echo "✅ Database seeded"
 cd ..
 
 echo ""
-echo "✨ Bootstrap complete! Run './start' to launch the app."
+echo "✨ Bootstrap complete! Run './script/start' to launch the app."
